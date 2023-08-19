@@ -18,9 +18,7 @@ Para rodar este projeto em sua máquina será necessário os seguintes pacotes:
 
 Acesse o diretório em seu computador, abra o seu editor de texto ou o terminal do Git e digite o seguinte comando:
 <pre>
-```
 git clone https://github.com/ArturLimaSS/praxis
-```
 </pre>
 
 Ou você pode simplesmente baixar o arquivo em ZIP
