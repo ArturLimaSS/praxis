@@ -18,5 +18,8 @@ use App\Models\TipoLogradouroModel;
 |
 */
 
-Route::get('/', [CidadeController::class, 'index']);
+Route::get('/', function(){
+    return view('index');
+});
+
 Route::get('/tipo', [TipoLogradouroController::class, 'index']);

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pessoa', function (Blueprint $table) {
             $table->id();
             $table->string("nome", 60)->nullable(false);
-            $table->int("idade")->nullable(false);
+            $table->integer("idade")->nullable(false);
             $table->string("email", 60)->nullable(false);
             $table->string("sexo")->nullable(true);
             $table->string("senha", 128);
