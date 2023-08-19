@@ -4,24 +4,32 @@
 
 Este projeto tem como objetivo um CRUD simples, utilizando o Laravel e Jquery para realizar todo o processo.
 Para rodar este projeto em sua máquina será necessário os seguintes pacotes:
+> **Downloads para Windows**\
 
 - [PHP](https://www.apachefriends.org/pt_br/index.html).
 - [MySQL](https://dev.mysql.com/downloads/mysql/).
 - [Composer](https://getcomposer.org/download/).
-- [Git](https://git-scm.com/download/win).
-<!-- - Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting). -->
+- [Git](https://git-scm.com/downloads).
 
 ## Primeiro passo
 
 Acesse o diretório em seu computador, abra o seu editor de texto ou o terminal do Git e digite o seguinte comando:
-<pre>
-git clone https://github.com/ArturLimaSS/praxis
-</pre>
 
-Ou você pode simplesmente baixar o arquivo em ZIP
+```git clone https://github.com/ArturLimaSS/praxis```
+
+Ou você pode simplesmente baixar o arquivo em ZIP [clicando aqui](https://github.com/ArturLimaSS/praxis/archive/refs/heads/main.zip).
+
+## Criando o Banco de Dados
+
+Este projeto tem como padrão o banco de dados **prova_crud_simples** e para criá-lo,
+abra o seu SGBD de preferência, e digite o seguinte script:
+
+```CREATE DATABASE prova_crud_simples;```
+```USE prova_crud_simples;```
+
+> *Nota*\
+Para criar as tabelas do banco de dados, devemos rodar as migrations, que são estruturas criadas no próprio
+Larvel.
 
 ## Laravel Sponsors
 
