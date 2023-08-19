@@ -32,8 +32,9 @@ DB_USERNAME=root
 DB_PASSWORD=`senha de acesso ao servidor/banco de dados`
 </pre>
 
-> **Nota**\
+> #**Nota**\
 > Este projeto tem como padrão o banco de dados **prova_crud_simples** e vamos criá-lo rodando o seguinte comando:
+
 ```php artisan migrate```
 
 Após rodar o comando de migração, aparecerá em seu terminal a seguinte mensagem:
