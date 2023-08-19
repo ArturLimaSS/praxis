@@ -2,7 +2,7 @@
 
 ## Sobre este projeto
 
-Este projeto tem como objetivo um CRUD simples, utilizando o Laravel e Jquery para realizar todo o processo.
+Este projeto tem como objetivo um CRUD simples, utilizando o Laravel e JavaScript para realizar todo o processo.
 Para rodar este projeto em sua máquina será necessário os seguintes pacotes:
 
 - [PHP](https://www.apachefriends.org/pt_br/index.html).
