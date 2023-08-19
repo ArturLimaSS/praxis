@@ -11,6 +11,6 @@ class CidadeController extends Controller
 {
     public function index(){
         $cidades = CidadeModel::all();
-        return view("welcome", ["cidades" => $cidades]);
+        return response()->json($cidades);
     }
 }

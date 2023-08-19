@@ -9,6 +9,6 @@ class TipoLogradouroController extends Controller
 {
     public function index(){
         $tipoLogradouro = TipoLogradouroModel::all();
-        return view('tipo', ['tipo_logradouro' => $tipoLogradouro]);
+        return response()->json($tipoLogradouro);
     }
 }

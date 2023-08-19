@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\EnderecoModel;
 use App\Models\PessoaModel;
 use Illuminate\Http\Request;
+use Illuminate\support\facades\DB;
 
 class PessoaController extends Controller
 {
@@ -41,5 +42,14 @@ class PessoaController extends Controller
         } catch (\Exception $e) {
             return response()->json(array('message' => $e));
         }
+    }
+
+    public function index(){
+        $pessoa = DB::table('pessoa')
+        ->join('endereco', 'pessoa.id', '=', 'endereco.pessoa_id')
+        ->select('pessoa.*', 'endereco.*')
+        ->get();
+
+        return response()->json($pessoa);
     }
 }

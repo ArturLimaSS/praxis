@@ -6,11 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praxis</title>
     <link href="{{ asset('../css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="container">
-        <button id="openModalBtn">Abrir Modal</button>
+        <button id="openModalBtn">Abrir Modal</button><br><br>
+
+        <div class="">
+            <fieldset>
+                <legend>Listagem</legend>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>Idade</th>
+                            <th>Sexo</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                </table>
+            </fieldset>
+        </div>
+
         <div id="myModal" class="modal container">
             <div class="modal-content">
                 <form id="form_cadastro" class="formulario">
@@ -60,7 +79,7 @@
 
                             <div class="form-group">
                                 <label for="cep">CEP</label>
-                                <input class="form-input" type="text" name="cep" id="cep" placeholder="cep">
+                                <input class="form-input" oninput="handleCep(event)" maxlength="9" type="text" name="cep" id="cep" placeholder="cep">
                             </div>
                             <div class="form-group">
                                 <br>
@@ -71,7 +90,9 @@
                         <div class="fields">
                             <div class="form-group">
                                 <label for="logradouro">Tipo de logradouro</label>
-                                <input class="form-input" type="text" name="tipo_logradouro" id="tipo_logradouro" placeholder="Tipo Logradouro">
+                                <select class="form-input" name="tipo_logradouro" id="tipo_logradouro">
+
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -91,22 +112,20 @@
 
                             <div class="form-group">
                                 <label for="cidade">Cidade</label>
-                                <input class="form-input" type="text" name="cidade" id="cidade" placeholder="cidade">
+                                <select class="form-input" name="cidade" id="cidade"></select>
                             </div>
                         </div>
                     </fieldset>
                     <button type="submit">Salvar</button>
-                    <button type="submit">Limpar</button>
+                    <button type="submit" id="limpar_formulario" onclick="limparForm()">Limpar</button>
                     <button type="submit" class="closeModalBtn" id="closeModalBtn">Cancelar</button>
                 </form>
             </div>
         </div>
-
-
-
     </div>
 </body>
+
 <script src="{{asset('../js/api.js')}}"></script>
-<script src="{{asset('../js/styles.js')}}"></script>
+<script src="{{asset('../js/script.js')}}"></script>
 
 </html>
