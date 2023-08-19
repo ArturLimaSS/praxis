@@ -40,8 +40,7 @@ Após rodar o comando de migração, aparecerá em seu terminal a seguinte mensa
 
 ```
 The database 'prova_crud_simples' does not exist on the 'mysql' connection.
-
-  Would you like to create it? (yes/no) [no]
+Would you like to create it? (yes/no) [no]
 ```
 
 Apenas digite `Yes` e tecle enter.
