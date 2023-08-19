@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
+use App\Http\Controllers\TipoLogradouroController;
 use App\Models\CidadeModel;
+use App\Models\TipoLogradouroModel;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,4 @@ use App\Models\CidadeModel;
 */
 
 Route::get('/', [CidadeController::class, 'index']);
+Route::get('/tipo', [TipoLogradouroController::class, 'index']);

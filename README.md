@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://www.linkedin.com/in/arturlimass/" target="_blank"><img src="https://media.licdn.com/dms/image/C4D03AQEgc2mZTf8DVg/profile-displayphoto-shrink_800_800/0/1645833592299?e=1697673600&v=beta&t=g8Qkc2JVN3KrORuTJueORbOP4kz_mipdpujw63GP-sU" width="400" alt="Artur Lima"></a></p>
 
 ## Sobre este projeto
 
