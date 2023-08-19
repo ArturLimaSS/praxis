@@ -1,4 +1,4 @@
-<p align="center"><a href="https://www.linkedin.com/in/arturlimass/" target="_blank"><img src="https://media.licdn.com/dms/image/C4D03AQEgc2mZTf8DVg/profile-displayphoto-shrink_800_800/0/1645833592299?e=1697673600&v=beta&t=g8Qkc2JVN3KrORuTJueORbOP4kz_mipdpujw63GP-sU" width="250" alt="Artur Lima"></a></p>
+<p align=""><a href="https://www.linkedin.com/in/arturlimass/" target="__blank"><img src="https://media.licdn.com/dms/image/C4D03AQEgc2mZTf8DVg/profile-displayphoto-shrink_800_800/0/1645833592299?e=1697673600&v=beta&t=g8Qkc2JVN3KrORuTJueORbOP4kz_mipdpujw63GP-sU" width="250" alt="Artur Lima"></a></p>
 
 ## Sobre este projeto
 
