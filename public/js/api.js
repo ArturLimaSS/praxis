@@ -10,7 +10,6 @@ const getCep = async () => {
     try {
         const response = await fetch(`https://viacep.com.br/ws/${ cep }/json/`);
         const data = await response.json();
-        console.log(data);
         logradouro.value = data.logradouro;
         bairro.value = data.bairro
         cidade.value = data.localidade
@@ -22,8 +21,6 @@ const getCep = async () => {
 document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
     e.preventDefault();
     const target = e.target;
-    console.log(e);
-
     const data = {
         "nome": target.nome.value,
         "idade": target.idade.value,
@@ -37,17 +34,13 @@ document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
         "bairro": target.bairro.value,
         "cidade": target.cidade.value
     };
-    console.log(data)
-
-     fetch(route, {
-         method: 'POST',
-         headers: {
-             'Content-Type': 'application/json',
-         },
-         body: JSON.stringify(data)
-     }).then(response => response.json())
-         .then(dataResponse => console.log(dataResponse))
-         .catch(error => console.log(error))
-
-
+    fetch(route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    }).then(response => response.json())
+        .then(dataResponse => console.log(dataResponse))
+        .catch(error => console.log(error))
 })
