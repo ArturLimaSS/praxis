@@ -173,8 +173,8 @@ const editarUsuario = (id) => {
             }
 
             const submitGroup = document.getElementById("submit-group");
-            submitGroup.innerHTML = `<button class="custom-button" type="button" onclick="atualizarUsuario(${id})" data-operation="atualizar">Editar</button>`;
-            
+            submitGroup.innerHTML = `<button class="custom-button" type="button" id="button-update" onclick="atualizarUsuario(${id})" data-operation="atualizar">Editar</button>`;
+
         });
 }
 
@@ -195,7 +195,7 @@ const atualizarUsuario = (id) => {
     };
 
     fetch(`/api/pessoa/${id}`, {
-        method: 'PUT', // Use o método PUT para atualizar os dados
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
@@ -206,7 +206,7 @@ const atualizarUsuario = (id) => {
                 alert(responseJson.message);
                 getPessoas();
                 closeModal();
-                
+
             }
         })
         .catch(error => console.log(error))
@@ -227,7 +227,30 @@ const excluirUsuario = (id) => {
         })
 }
 
-const cadastrarUsuario = (e) => {
+const senhaInput = document.getElementById('senha');
+const confirmacaoSenhaInput = document.getElementById('confirmacao_senha');
+const senhaFeedback = document.getElementById('senha-feedback');
+const buttonCadastro = document.getElementById('button-cadastro')
+const edicaoButton = document.getElementById('button-update')
+confirmacaoSenhaInput.addEventListener('input', () => {
+    const senha = senhaInput.value;
+    const confirmacaoSenha = confirmacaoSenhaInput.value;
+
+    if (senha === confirmacaoSenha) {
+        senhaFeedback.textContent = 'Senhas iguais';
+        senhaFeedback.style.color = 'green';
+        buttonCadastro.disabled = false
+        edicaoButton.disabled = false
+        
+    } else {
+        senhaFeedback.textContent = 'Senhas não são iguais';
+        senhaFeedback.style.color = 'red';
+        buttonCadastro.disabled = true
+        edicaoButton.disabled = true
+    }
+});
+
+document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
     e.preventDefault();
     const target = e.target;
     const data = {
@@ -259,12 +282,4 @@ const cadastrarUsuario = (e) => {
             }
         })
         .catch(error => console.log(error))
-}
-
-document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
-    if (operation === "cadastrar") {
-        cadastrarUsuario()
-    } else if (operation === "atualizar") {
-        editarUsuario(e)
-    }
 });

@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="confirmacao_senha">Confirmação de Senha</label>
+                                <label for="confirmacao_senha">Confirmação de Senha: <span id="senha-feedback"></span></label>
                                 <input class="form-input" type="password" name="confirmacao_senha" id="confirmacao_senha" placeholder="Confirmação de Senha" autocomplete="false">
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                         </div>
                     </fieldset>
                     <div id="submit-group">
-                    <button class="custom-button" type="button" id="button-cadastro" data-operation="cadastrar">Salvar</button>
+                    <button class="custom-button" type="submit" disabled id="button-cadastro" data-operation="cadastrar">Salvar</button>
                     <button class="custom-button" type="submit" id="limpar_formulario" onclick="limparForm()">Limpar</button>
                     <button class="custom-button" type="submit" class="closeModalBtn" id="closeModalBtn">Cancelar</button>
                     </div>
