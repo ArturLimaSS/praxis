@@ -37,7 +37,6 @@ window.addEventListener("click", (event) => {
         var modal = document.getElementById("myModal");
         modal.classList.remove("fade-in");
         modal.classList.add("fade-out");
-
         setTimeout(() => {
             modal.style.display = "none";
             modal.classList.remove("fade-out");
@@ -83,8 +82,8 @@ const mascaraCep = (value) => {
 
 
 const validaEmail = (email) => {
-    const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
-    return regex.test(email)
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
 }
 
 const email = document.getElementById('email')

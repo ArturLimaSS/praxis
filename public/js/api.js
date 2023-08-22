@@ -15,7 +15,7 @@ const getCep = async () => {
     const cep = document.querySelector('#cep').value;
 
     try {
-        const response = await fetch(`https://viacep.com.br/ws/${ cep }/json/`);
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         const data = await response.json();
         if (data.erro === true) {
             alert("CEP Não encontrado na base de dados.")
@@ -58,7 +58,7 @@ const getCidade = () => {
             let cidades = '<option value="" disabled selected>Selecione cidade</option>';
 
             for (let i = 0; i < responseJson.length; i++) {
-                cidades += `<option value="${ responseJson[i].id }">${ responseJson[i].nome }</option>`;
+                cidades += `<option value="${responseJson[i].id}">${responseJson[i].nome}</option>`;
             }
 
             selectCidade.innerHTML = cidades;
@@ -80,7 +80,7 @@ const getTipoLogradouro = () => {
             let tipos = '<option value="" disabled selected>Selecione o tipo de logradouro</option>';
 
             for (let i = 0; i < responseJson.length; i++) {
-                tipos += `<option value="${ responseJson[i].id }">${ responseJson[i].nome }</option>`;
+                tipos += `<option value="${responseJson[i].id}">${responseJson[i].nome}</option>`;
             }
 
             selectTipoLogradouro.innerHTML = tipos;
@@ -114,25 +114,25 @@ const getPessoas = () => {
                     let enderecoCompleto = '';
 
                     if (tipoLogradouro !== '') {
-                        enderecoCompleto += `${ tipoLogradouro } ${ logradouro } ${ numero }`;
+                        enderecoCompleto += `${tipoLogradouro} ${logradouro} ${numero}`;
                     } else {
-                        enderecoCompleto += `${ logradouro } ${ numero }`;
+                        enderecoCompleto += `${logradouro} ${numero}`;
                     }
 
                     if (bairro !== '') {
-                        enderecoCompleto += `, ${ bairro }`;
+                        enderecoCompleto += `, ${bairro}`;
                     }
 
                     if (cidade !== '') {
-                        enderecoCompleto += `, ${ cidade }`;
+                        enderecoCompleto += `, ${cidade}`;
                     }
 
                     pessoas += `<tr>
-                        <td>${ nome }</td>
-                        <td>${ enderecoCompleto }</td>
-                        <td>${ idade }</td>
-                        <td>${ sexo }</td>
-                        <td><button onClick="editarUsuario(${ responseJson[i].id })">Editar</button><button onClick="excluirUsuario(${ responseJson[i].id })">Excluir</button></td>
+                        <td>${nome}</td>
+                        <td>${enderecoCompleto}</td>
+                        <td>${idade}</td>
+                        <td>${sexo}</td>
+                        <td><button onClick="editarUsuario(${responseJson[i].id})">Editar</button><button onClick="excluirUsuario(${responseJson[i].id})">Excluir</button></td>
                         </tr>`;
                 }
             } else {
@@ -145,7 +145,7 @@ const getPessoas = () => {
 }
 
 const editarUsuario = (id) => {
-    fetch(`/api/pessoa/${ id }`, {
+    fetch(`/api/pessoa/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -156,7 +156,11 @@ const editarUsuario = (id) => {
             openModal();
             document.querySelector("#nome").value = pessoa.nome;
             document.querySelector("#idade").value = pessoa.idade;
-            document.querySelector("#sexo").value = pessoa.sexo;
+            if (pessoa.sexo === "masculino") {
+                document.querySelector('input[name="sexo"][value="masculino"]').checked = true;
+            } else if (pessoa.sexo === "feminino") {
+                document.querySelector('input[name="sexo"][value="feminino"]').checked = true;
+            }
             document.querySelector("#email").value = pessoa.email;
             if (pessoa.endereco) {
                 const endereco = pessoa.endereco;
@@ -193,7 +197,7 @@ const atualizarUsuario = (id) => {
         "cidade": target.cidade.value
     };
 
-    fetch(`/api/pessoa/${ id }`, {
+    fetch(`/api/pessoa/${id}`, {
         method: 'PUT', // Use o método PUT para atualizar os dados
         headers: {
             'Content-Type': 'application/json',
@@ -211,7 +215,7 @@ const atualizarUsuario = (id) => {
 }
 
 const excluirUsuario = (id) => {
-    fetch(`/api/pessoa/${ id }`, {
+    fetch(`/api/pessoa/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
