@@ -61,8 +61,6 @@ Para inserirmos os dados inciais, digite em seu terminal o seguinte comando:
 
 ## Executando o projeto
 
-## Executando o Projeto
-
 Para rodar o projeto em sua máquina, siga esses passos:
 
 1. No terminal do seu editor ou no terminal do sistema operacional, navegue até o diretório do projeto usando o seguinte comando:
