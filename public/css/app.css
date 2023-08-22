@@ -102,3 +102,41 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+
+.text-center {
+    text-align: center;
+}
+
+th {
+    padding: 6px;
+    vertical-align: top;
+    background-color: #F0F0F0;
+}
+
+td {
+    padding: 10px;
+    vertical-align: top;
+
+}
+
+.custom-button {
+    padding: 10px !important;
+}
+
+.mb-1{
+    margin-bottom: 1rem
+}
+
+.check-obrigatorio{
+    color: #f44336;
+    margin-left: 3px;
+  }
+
+  .check-obrigatorio-var{
+    color: #f44336;
+    margin-left: 3px;
+  }
+
+.d-none{
+    display: none;
+}

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger("pessoa_id")->nullable(false);
             $table->string("logradouro", 200)->nullable(false);
             $table->integer("numero")->nullable(false);
-            $table->integer("cep")->nullable(false);
+            $table->integer("cep")->nullable(true);
             $table->string("bairro", 60)->nullable(true);
             $table->foreign("tipo_logradouro_id")->references("id")->on("tipo_logradouro")->onDelete("restrict")->onUpdate("restrict");
             $table->foreign("cidade_id")->references("id")->on("cidade")->onDelete("restrict")->onUpdate("restrict");
