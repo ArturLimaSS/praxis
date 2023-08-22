@@ -20,8 +20,13 @@ Ou você pode simplesmente baixar o arquivo em ZIP [clicando aqui](https://githu
 
 ## Banco de Dados
 
-Vamos configgurar o arquivo `.env`. Para isso, copie o arquivo .env.example e renomeie para apenas `.env`.
-Dentro do arquivo, configure seu server local de acordo com o exemplo a seguir:
+## Configurando o Arquivo .env
+
+1. Após clonar o repositório e acessar o diretório do projeto, crie uma cópia do arquivo `.env.example` com o nome `.env`. Você pode fazer isso executando o seguinte comando no terminal:
+
+```cp .env.example .env```
+
+Agora, basta substituir os seguintes dados:
 
 <pre>
 DB_CONNECTION=mysql
@@ -53,3 +58,20 @@ Após realizada todo este procedimento, o banco de dados estará criado com a su
 Para inserirmos os dados inciais, digite em seu terminal o seguinte comando:
 
 ```php artisan db:seed```
+
+## Executando o projeto
+
+## Executando o Projeto
+
+Para rodar o projeto em sua máquina, siga esses passos:
+
+1. No terminal do seu editor ou no terminal do sistema operacional, navegue até o diretório do projeto usando o seguinte comando:
+
+```cd praxis```
+```php artisan serve```
+
+Após rodar estes comandos, em seu terminal aparecerá a seguinte mensagem com a porta disponível em seu sistema operacional.
+
+``` INFO  Server running on [http://127.0.0.1:8000].```
+
+Basta acessar este link [http://127.0.0.1:8000] em seu navegador e utilizar o sistema para o cadastro, delete, e update.
