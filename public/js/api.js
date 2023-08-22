@@ -153,7 +153,7 @@ const editarUsuario = (id) => {
     })
         .then(response => response.json())
         .then(pessoa => {
-            openModal();
+            openModal("atualizar");
             document.querySelector("#nome").value = pessoa.nome;
             document.querySelector("#idade").value = pessoa.idade;
             if (pessoa.sexo === "masculino") {
@@ -171,13 +171,10 @@ const editarUsuario = (id) => {
                 document.querySelector("#bairro").value = endereco.bairro;
                 document.querySelector("#cidade").value = endereco.cidade_id;
             }
-            document.querySelector("#form_cadastro").removeEventListener('submit', cadastrarUsuario);
-            document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
-                e.preventDefault();
-                atualizarUsuario(id);
-            });
 
-
+            const submitGroup = document.getElementById("submit-group");
+            submitGroup.innerHTML = `<button class="custom-button" type="button" onclick="atualizarUsuario(${id})" data-operation="atualizar">Editar</button>`;
+            
         });
 }
 
@@ -209,6 +206,7 @@ const atualizarUsuario = (id) => {
                 alert(responseJson.message);
                 getPessoas();
                 closeModal();
+                
             }
         })
         .catch(error => console.log(error))
@@ -229,7 +227,7 @@ const excluirUsuario = (id) => {
         })
 }
 
-document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
+const cadastrarUsuario = (e) => {
     e.preventDefault();
     const target = e.target;
     const data = {
@@ -261,4 +259,12 @@ document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
             }
         })
         .catch(error => console.log(error))
-})
+}
+
+document.querySelector("#form_cadastro").addEventListener('submit', (e) => {
+    if (operation === "cadastrar") {
+        cadastrarUsuario()
+    } else if (operation === "atualizar") {
+        editarUsuario(e)
+    }
+});

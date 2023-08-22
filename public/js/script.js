@@ -1,8 +1,8 @@
-const openModal = () => {
+const openModal = (e) => {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
     modal.classList.remove("fade-out");
-    modal.classList.add("fade-in");
+    modal.classList.add("fade-in"); 
     getCidade();
     getTipoLogradouro();
 }
@@ -29,6 +29,8 @@ const closeModal = () => {
     setTimeout(() => {
         modal.style.display = "none";
         modal.classList.remove("fade-out");
+        limparForm()
+        window.location.reload();
     }, 300);
 }
 
@@ -40,6 +42,7 @@ window.addEventListener("click", (event) => {
         setTimeout(() => {
             modal.style.display = "none";
             modal.classList.remove("fade-out");
+            window.location.reload();
         }, 300);
     }
 });

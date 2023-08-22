@@ -119,9 +119,11 @@
                             </div>
                         </div>
                     </fieldset>
-                    <button class="custom-button" type="submit">Salvar</button>
+                    <div id="submit-group">
+                    <button class="custom-button" type="button" id="button-cadastro" data-operation="cadastrar">Salvar</button>
                     <button class="custom-button" type="submit" id="limpar_formulario" onclick="limparForm()">Limpar</button>
                     <button class="custom-button" type="submit" class="closeModalBtn" id="closeModalBtn">Cancelar</button>
+                    </div>
                 </form>
             </div>
         </div>
