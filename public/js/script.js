@@ -89,10 +89,10 @@ const validaEmail = (email) => {
 
 const email = document.getElementById('email')
 email.addEventListener('blur', () => {
-    const email_input = email.value;
+    const emailValue = email.value;
 
-    if (email_input.trim() !== '') {
-        const isValid = validaEmail(email_input);
+    if (emailValue.trim() !== '') {
+        const isValid = validaEmail(emailValue);
         if (!isValid) {
             alert('Email inválido');
             email.value = '';
